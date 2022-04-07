@@ -9,9 +9,6 @@ cache:
     - "node_modules"
 install:
   - npm install
-deploy:
-  - provider: script
-    skip_cleanup: true
-    script: chmod +x ./deploy.sh && ./deploy.sh
-    on:
-      branch: master
+script:
+  - npm run lint
+  - npm test
